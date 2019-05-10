@@ -23,7 +23,7 @@ public class KickBall : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             Vector2 direction = _ballTransform.position - transform.position;
-            if(direction.magnitude / _kickRadiusCircleCollider.radius <= 1) {
+            if (direction.magnitude / _kickRadiusCircleCollider.radius <= 1) {
                 _ballTransform.GetComponent<Rigidbody2D>().AddForce(direction.normalized * _kickPower, ForceMode2D.Impulse);
             }
         }
