@@ -19,7 +19,7 @@ public class Shockable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == _shockerTag)
+        if(col.gameObject == _shocker)
         {
             _setActiveOnCollision.SetActive(true);
             GetComponent<Patrol>().enabled = false;
