@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class KickBall : MonoBehaviour
 {
     [SerializeField]
-    private Transform _ballTransform;
+    private List<Transform> _ballTransforms;
 
     [SerializeField]
     private CircleCollider2D _kickRadiusCircleCollider;
@@ -22,9 +23,13 @@ public class KickBall : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Vector2 direction = _ballTransform.position - transform.position;
-            if (direction.magnitude / _kickRadiusCircleCollider.radius <= 1) {
-                _ballTransform.GetComponent<Rigidbody2D>().AddForce(direction.normalized * _kickPower, ForceMode2D.Impulse);
+            foreach(var ballTransform in _ballTransforms)
+            {
+                Vector2 direction = ballTransform.position - transform.position;
+                if (direction.magnitude / _kickRadiusCircleCollider.radius <= 1)
+                {
+                    ballTransform.GetComponent<Rigidbody2D>().AddForce(direction.normalized * _kickPower, ForceMode2D.Impulse);
+                }
             }
         }
     }

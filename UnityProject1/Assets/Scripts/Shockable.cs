@@ -1,10 +1,11 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Shockable : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _shocker;
+    private List<GameObject> _shockers;
 
     [SerializeField]
     private GameObject _setActiveOnCollision;
@@ -19,7 +20,15 @@ public class Shockable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject == _shocker)
+        bool shockerHit = false;
+        foreach(var shocker in _shockers)
+        {
+            if(col.gameObject == shocker)
+            {
+                shockerHit = true;
+            }
+        }
+        if(shockerHit)
         {
             _setActiveOnCollision.SetActive(true);
             GetComponent<Patrol>().enabled = false;
