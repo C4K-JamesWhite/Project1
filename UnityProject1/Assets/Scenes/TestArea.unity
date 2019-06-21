@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 502450133}
   - component: {fileID: 502450132}
   m_Layer: 0
-  m_Name: kick radius
+  m_Name: KickRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
