@@ -952,7 +952,7 @@ MonoBehaviour:
   - {fileID: 1798528309}
   - {fileID: 1389810780}
   _kickRadiusCircleCollider: {fileID: 502450132}
-  _setActiveOnKick: {fileID: 0}
+  _setActiveOnKick: {fileID: 945283558}
   _kickPower: 45
 --- !u!1 &351728343
 GameObject:
@@ -2261,6 +2261,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 11400000, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 77ec3c4e07a36814fb3169ecef41b50a, type: 3}
+--- !u!1 &945283558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b,
+    type: 3}
+  m_PrefabInstance: {fileID: 316009136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &955677807
 GameObject:
   m_ObjectHideFlags: 0
