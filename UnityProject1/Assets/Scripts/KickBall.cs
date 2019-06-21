@@ -13,13 +13,6 @@ public class KickBall : MonoBehaviour
     [SerializeField]
     private float _kickPower;
 
-    private Rigidbody2D _rigidBody;
-
-    private void Awake()
-    {
-        _rigidBody = GetComponent<Rigidbody2D>();
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
