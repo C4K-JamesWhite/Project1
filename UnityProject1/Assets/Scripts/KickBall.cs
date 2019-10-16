@@ -11,11 +11,21 @@ public class KickBall : MonoBehaviour
     private CircleCollider2D _kickRadiusCircleCollider;
 
     [SerializeField]
+    private GameObject _setActiveOnKick;
+
+    [SerializeField]
     private float _kickPower;
+
+    private void Start() {
+        float radiusSoftener = 0.8f;
+        float r = _kickRadiusCircleCollider.radius * radiusSoftener;
+        _setActiveOnKick.transform.localScale = new Vector3(r, r, r);
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
+            _setActiveOnKick.SetActive(true);
             foreach(var ballTransform in _ballTransforms)
             {
                 Vector2 direction = ballTransform.position - transform.position;
